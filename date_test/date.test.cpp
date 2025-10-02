@@ -5,17 +5,12 @@
 
 TEST(DefaultCtor, HasCorrectValue) {
 
-	util::Date day1;
+	util::Date d;
 
 	EXPECT_EQ(d.day(), 1);
 	EXPECT_EQ(d.month(), 3);
 	EXPECT_EQ(d.year(), 1982);
 
-
-
-
-
-
-
 }
+
 

@@ -13,6 +13,18 @@ namespace util {
 
 	};
 
+	int const Date::day() {
+		return timeInformation.tm_mday;
+	}
+
+	int const Date::month() {
+		return timeInformation.tm_mon;
+	}
+
+	int const Date::year() {
+		return timeInformation.tm_year;
+	}
+
 
 
 

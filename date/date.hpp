@@ -13,9 +13,26 @@ namespace util {
 	public:
 		Date();
 
+		struct Invalid {
+			int day;
+			int month;
+			int year;
+		};
+
+		enum class Order {
+			MonthDayYear,
+			DayMonthYear,
+			YearMonthDay
+		};
+
+		int const day();
+		int const month();
+		int const year();
+
+		Date(int day, int month, int year);
+
 	private:
 		tm timeInformation;
-
 	};
 
 	
