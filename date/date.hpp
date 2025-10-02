@@ -3,7 +3,9 @@
 #pragma once
 #define _CRT_SECURE_NO_WARNINGS
 #include <ctime>
+#include <string>
 #include "date.hpp"
+using std::string;
 
 
 namespace util {
@@ -29,6 +31,12 @@ namespace util {
 		int const month();
 		int const year();
 
+		void day(int day);
+		void month(int month);
+		void year(int year);
+		string const dayName();
+		string const monthName();
+	
 		Date(int day, int month, int year);
 
 	private:
