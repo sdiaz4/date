@@ -2,9 +2,6 @@
 # project specific logic here.
 #
 
-
-target_include_directories(date PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/date)
-
 # Add source to this project's executable.
 add_executable (date_test "date.test.cpp" )
 

@@ -3,9 +3,19 @@
 #include "date.hpp"
 #include <gtest/gtest.h>
 
-TEST(date, rightConstr) {
+TEST(DefaultCtor, HasCorrectValue) {
 
-	util::Date d
+	util::Date day1;
+
+	EXPECT_EQ(d.day(), 1);
+	EXPECT_EQ(d.month(), 3);
+	EXPECT_EQ(d.year(), 1982);
+
+
+
+
+
+
 
 }
 
