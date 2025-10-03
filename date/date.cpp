@@ -16,16 +16,16 @@ namespace util {
 
 	};
 
-	int const Date::day() {
+	int Date::day() const {
 		return timeInformation.tm_mday;
 	}
 
-	int const Date::month() {
-		return timeInformation.tm_mon;
+	int Date::month() const {
+		return timeInformation.tm_mon + 1;
 	}
 
-	int const Date::year() {
-		return timeInformation.tm_year;
+	int Date::year() const {
+		return timeInformation.tm_year + 1900;
 	}
 
 	Date::Date(int day, int month, int year) {
@@ -99,7 +99,7 @@ namespace util {
 
 	}
 
-	string const Date::dayName() {
+	string Date::dayName() const {
 		int day = timeInformation.tm_wday;
 		switch (day) {
 		case 0: return "Sunday";
@@ -115,7 +115,7 @@ namespace util {
 
 	}
 
-	string const Date::monthName() {
+	string Date::monthName() const {
 		int month = timeInformation.tm_mon;
 		switch (month) {
 		case 0: return "January";
@@ -159,6 +159,16 @@ namespace util {
 			outstream << year << separator << month << separator << day;
 			break;
 		}
+	}
+
+	Date Date::now() {
+		time_t t = time(nullptr);
+		tm time = *localtime(&t);
+		int day = time.tm_mday;
+		int month = time.tm_mon + 1;
+		int year = time.tm_year + 1900;
+
+		return Date(day, month, year);
 	}
 
 }

@@ -27,20 +27,21 @@ namespace util {
 			YearMonthDay
 		};
 
-		int const day();
-		int const month();
-		int const year();
+		int day() const;
+		int month() const;
+		int year() const;
 
 		void day(int day);
 		void month(int month);
 		void year(int year);
-		string const dayName();
-		string const monthName();
+		string dayName() const;
+		string monthName() const;
 		void advance(int days);
 		void print(std::ostream&);
 		
 	
 		Date(int day, int month, int year);
+		Date now();
 
 	private:
 		tm timeInformation;
