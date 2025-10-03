@@ -4,6 +4,7 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include <ctime>
 #include "date.hpp"
+#include <iostream>
 
 
 
@@ -142,5 +143,22 @@ namespace util {
 
 	Date::Order Date::order = Date::Order::MonthDayYear;
 	char Date::separator = '/';
+
+	void Date::print(std::ostream& outstream) {
+		int day = timeInformation.tm_mday;
+		int month = timeInformation.tm_mon + 1;
+		int year = timeInformation.tm_year + 1900;
+		switch (Date::order) {
+		case Date::Order::MonthDayYear:
+			outstream << month << separator << day << separator << year;
+			break;
+		case Date::Order::DayMonthYear:
+			outstream << day << separator << month << separator << year;
+			break;
+		case Date::Order::YearMonthDay:
+			outstream << year << separator << month << separator << day;
+			break;
+		}
+	}
 
 }
