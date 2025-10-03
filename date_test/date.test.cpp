@@ -22,4 +22,18 @@ TEST(ValueCtor, CorrectValues) {
 }
 
 
+TEST(Setters, RightValues) {
+	util::Date d(1, 1, 2020);
+	d.day(12);
+	d.month(12);
+	d.year(2021);
+
+	EXPECT_EQ(d.day(), 12);
+	EXPECT_EQ(d.month(), 12);
+	EXPECT_EQ(d.year(), 2021);
+
+}
+
+
+
 
