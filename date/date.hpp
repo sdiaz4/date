@@ -37,7 +37,7 @@ namespace util {
 		string dayName() const;
 		string monthName() const;
 		void advance(int days = 1);
-		void print(std::ostream&);
+		void print(std::ostream&) const;
 		
 	
 		Date(int day, int month, int year);

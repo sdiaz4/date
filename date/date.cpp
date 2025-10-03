@@ -30,6 +30,7 @@ namespace util {
 		t.tm_mday = day;
 		t.tm_mon = month - 1;
 		t.tm_year = year - 1900;
+		t.tm_isdst = -1;
 
 		tm copy =  t;
 
@@ -140,7 +141,7 @@ namespace util {
 	Date::Order Date::order = Date::Order::MonthDayYear;
 	char Date::separator = '/';
 
-	void Date::print(std::ostream& outstream) {
+	void Date::print(std::ostream& outstream) const {
 		int day = timeInformation.tm_mday;
 		int month = timeInformation.tm_mon + 1;
 		int year = timeInformation.tm_year + 1900;
