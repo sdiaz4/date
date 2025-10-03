@@ -8,7 +8,7 @@ A brief description of the project (i.e., a couple of sentences)
 	- This project is meant to be a time and date class, with varying methods to change and check the date with tests 
 	  testing each method.
 Any external resources used to complete the project
-	-none
+	-https://learn.microsoft.com/en-us/cpp/cpp/constructors-cpp?view=msvc-170
 Any special instructions for using your program	
 	-none
 Any issues or shortcomings with the project and how you would address them if you had more time

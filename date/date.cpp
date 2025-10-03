@@ -10,11 +10,7 @@
 
 namespace util {
 
-	Date::Date() {
-		time_t t = 0;
-		timeInformation = *localtime(&t);
-
-	};
+	Date::Date() : Date(1, 1, 1970) {};
 
 	int Date::day() const {
 		return timeInformation.tm_mday;
