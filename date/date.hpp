@@ -36,11 +36,17 @@ namespace util {
 		void year(int year);
 		string const dayName();
 		string const monthName();
+		void advance(int days);
+		
 	
 		Date(int day, int month, int year);
 
 	private:
 		tm timeInformation;
+		static Order order;
+		static char separator;
+
+		
 	};
 
 	
