@@ -42,14 +42,37 @@ TEST(Props, CorrectValues) {
 }
 
 
-//TEST(Advance, CorrectValues) {
-//
-//}
-//
-//TEST(Print, CorrectValues) {
-//
-//}
-//
+TEST(Advance, CorrectValuesDefault) {
+	util::Date d(3, 10, 2025);
+	d.advance();
+
+	EXPECT_EQ(d.day(), 4);
+}
+
+TEST(Advance, CorrectValuesback) {
+	util::Date d(3, 10, 2025);
+	d.advance(-1);
+
+	EXPECT_EQ(d.day(), 2);
+}
+
+TEST(Advance, CorrectValuesForwardSeven) {
+	util::Date d(3, 10, 2025);
+	d.advance(7);
+
+	EXPECT_EQ(d.day(), 10);
+}
+
+TEST(Print, CorrectValues) {
+	util::Date d(4, 7, 2015);
+	util::Date::order = util::Date::Order::MonthDayYear;
+	util::Date::separator = '/';
+
+	std::ostringstream out;
+	d.print(out);
+	EXPECT_EQ(out.str(), "7/4/2015");
+}
+
 //TEST(Now, CorrectValues) {
 //
 //}
