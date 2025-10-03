@@ -26,11 +26,15 @@ namespace util {
 
 	Date::Date(int day, int month, int year) {
 
-		tm t;
+		tm t = {};
 		t.tm_mday = day;
 		t.tm_mon = month - 1;
 		t.tm_year = year - 1900;
+		t.tm_hour = 12;
+		t.tm_min = 0;
+		t.tm_sec = 0;
 		t.tm_isdst = -1;
+		
 
 		tm copy =  t;
 
@@ -40,7 +44,7 @@ namespace util {
 			t.tm_mon == copy.tm_mon &&
 			t.tm_year == copy.tm_year) {
 
-			timeInformation = t;
+			timeInformation = copy;
 
 		}
 		else {

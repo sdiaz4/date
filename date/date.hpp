@@ -48,9 +48,6 @@ namespace util {
 
 	private:
 		tm timeInformation;
-		
-
-		
 	};
 
 	

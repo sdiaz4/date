@@ -22,7 +22,7 @@ TEST(ValueCtor, CorrectValues) {
 }
 
 
-TEST(Setters, RightValues) {
+TEST(Setters, CorrectValues) {
 	util::Date d(1, 1, 2020);
 	d.day(12);
 	d.month(12);
@@ -33,6 +33,26 @@ TEST(Setters, RightValues) {
 	EXPECT_EQ(d.year(), 2021);
 
 }
+
+TEST(Props, CorrectValues) {
+	util::Date d(3, 10, 2025);
+	
+	EXPECT_EQ(d.dayName(), "Friday");
+	EXPECT_EQ(d.monthName(), "October");
+}
+
+
+//TEST(Advance, CorrectValues) {
+//
+//}
+//
+//TEST(Print, CorrectValues) {
+//
+//}
+//
+//TEST(Now, CorrectValues) {
+//
+//}
 
 
 
