@@ -134,7 +134,7 @@ namespace util {
 		}
 	}
 
-	void Date::advance(int days) {
+	void Date::advance(int days = 1) {
 		time_t seconds = mktime(&timeInformation);
 		seconds += days * 24 * 60 * 60;
 		timeInformation = *localtime(&seconds);

@@ -36,17 +36,19 @@ namespace util {
 		void year(int year);
 		string dayName() const;
 		string monthName() const;
-		void advance(int days);
+		void advance(int days = 1);
 		void print(std::ostream&);
 		
 	
 		Date(int day, int month, int year);
-		Date now();
+		static Date now();
+
+		static Order order;
+		static char separator;
 
 	private:
 		tm timeInformation;
-		static Order order;
-		static char separator;
+		
 
 		
 	};
